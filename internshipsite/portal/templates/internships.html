@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Internships</title>
+</head>
+<body>
+    <h1>Available Internships</h1>
+
+    {% for internship in internships %}
+        <h3>{{ internship.title }}</h3>
+        <p>{{ internship.description }}</p>
+        <p>Skills: {{ internship.required_skills }}</p>
+        <p>Deadline: {{ internship.deadline }}</p>
+        <hr>
+    {% empty %}
+        <p>No internships available</p>
+    {% endfor %}
+
+</body>
+</html>
