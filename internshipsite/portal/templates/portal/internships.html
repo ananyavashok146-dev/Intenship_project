@@ -1,0 +1,18 @@
+{% extends 'portal/base.html' %}
+{% block content %}
+    <h2>Available Internships</h2>
+
+    <div class="internships-grid">
+    {% for internship in internships %}
+        <article class="internship-card">
+            <h3><a href="{% url 'internship_detail' internship.pk %}">{{ internship.title }}</a></h3>
+            <div class="meta">Company: {{ internship.company.company_name }} &nbsp; | &nbsp; Deadline: {{ internship.deadline }}</div>
+            <p class="desc">{{ internship.description|truncatechars:180 }}</p>
+            <div class="skills">Skills: {{ internship.required_skills }}</div>
+            <a class="btn" href="{% url 'internship_detail' internship.pk %}">View & Apply</a>
+        </article>
+    {% empty %}
+        <p>No internships available</p>
+    {% endfor %}
+    </div>
+{% endblock %}

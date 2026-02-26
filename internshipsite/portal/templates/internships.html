@@ -1,20 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Internships</title>
-</head>
-<body>
-    <h1>Available Internships</h1>
+{% extends 'base.html' %}
 
-    {% for internship in internships %}
-        <h3>{{ internship.title }}</h3>
-        <p>{{ internship.description }}</p>
-        <p>Skills: {{ internship.required_skills }}</p>
-        <p>Deadline: {{ internship.deadline }}</p>
-        <hr>
-    {% empty %}
-        <p>No internships available</p>
-    {% endfor %}
+{% block title %}Internships — Intenshio{% endblock %}
 
-</body>
-</html>
+{% block content %}
+<div class="container py-4">
+    <h1 class="mb-4">Available Internships</h1>
+
+    <div class="row">
+        {% for internship in internships %}
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ internship.title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ internship.company.company_name }}</h6>
+                    <p class="card-text small text-truncate-3">{{ internship.description }}</p>
+                    <p class="mt-auto mb-1"><strong>Skills:</strong> {{ internship.required_skills }}</p>
+                    <p class="text-muted small">Deadline: {{ internship.deadline }}</p>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info">No internships available</div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

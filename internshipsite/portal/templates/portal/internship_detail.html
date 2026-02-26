@@ -1,0 +1,18 @@
+{% extends 'portal/base.html' %}
+{% block content %}
+    <article class="internship-detail">
+        <h2>{{ internship.title }}</h2>
+        <div class="meta">Company: {{ internship.company.company_name }} &nbsp; | &nbsp; Deadline: {{ internship.deadline }}</div>
+        <p class="desc">{{ internship.description }}</p>
+        <p><strong>Skills:</strong> {{ internship.required_skills }}</p>
+
+        {% if user.is_authenticated %}
+            <form method="post" action="{% url 'apply_internship' internship.pk %}">
+                {% csrf_token %}
+                <button class="btn" type="submit">Apply for this internship</button>
+            </form>
+        {% else %}
+            <p>Please <a href="/admin/login/?next={{ request.path }}">sign in</a> to apply.</p>
+        {% endif %}
+    </article>
+{% endblock %}

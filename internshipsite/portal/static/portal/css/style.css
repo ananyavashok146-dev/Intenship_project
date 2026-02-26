@@ -1,0 +1,6 @@
+/* Small custom styles for Intenshio frontend */
+body { background: #f8fafc; }
+.text-truncate-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.card { border: 0; }
+.navbar-brand { font-weight: 600; }
+.container { max-width: 1100px; }

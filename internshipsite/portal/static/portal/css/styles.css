@@ -1,0 +1,18 @@
+/* Basic styles for Intenshio frontend */
+:root{--accent:#1976d2;--muted:#666}
+body{font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif;margin:0;color:#222;background:#f7f9fb}
+.container{max-width:980px;margin:0 auto;padding:24px}
+.site-header{background:#fff;border-bottom:1px solid #e6eef9}
+.site-header .container{display:flex;align-items:center;justify-content:space-between}
+.logo{margin:0;color:var(--accent)}
+.main-nav a{margin-left:14px;color:var(--muted);text-decoration:none}
+.internships-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:18px}
+.internship-card{background:#fff;padding:16px;border-radius:8px;box-shadow:0 4px 10px rgba(20,30,60,0.04)}
+.internship-card h3{margin:0 0 6px}
+.internship-card .meta{font-size:13px;color:#666;margin-bottom:8px}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:8px 12px;border-radius:6px;text-decoration:none;border:none;cursor:pointer}
+.internship-detail{background:#fff;padding:20px;border-radius:8px}
+.site-footer{padding:18px 0;text-align:center;color:#888;margin-top:30px}
+.desc{color:#333}
+.skills{font-weight:600;margin-top:8px}
+.result{background:#fff;padding:20px;border-radius:8px;text-align:center}
